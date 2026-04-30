@@ -964,6 +964,7 @@ class UserMessage:
 
     content: str | list[ContentBlock]
     uuid: str | None = None
+    timestamp: str | None = None
     parent_tool_use_id: str | None = None
     tool_use_result: dict[str, Any] | None = None
 
@@ -981,6 +982,7 @@ class AssistantMessage:
     stop_reason: str | None = None
     session_id: str | None = None
     uuid: str | None = None
+    timestamp: str | None = None
 
 
 @dataclass
@@ -989,6 +991,7 @@ class SystemMessage:
 
     subtype: str
     data: dict[str, Any]
+    timestamp: str | None = field(default=None, kw_only=True)
 
 
 class TaskUsage(TypedDict):
@@ -1093,6 +1096,7 @@ class ResultMessage:
     permission_denials: list[Any] | None = None
     errors: list[str] | None = None
     uuid: str | None = None
+    timestamp: str | None = None
 
 
 @dataclass
